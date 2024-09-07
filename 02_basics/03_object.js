@@ -12,6 +12,8 @@ user.isLoggedIn=false
 
 console.log(Object.keys(user))
 console.log(Object.values(user))
+console.log(Object.entries(user))
+console.log(user.hasOwnProperty("isLogged"))
 
 // how to access element in nested Object
 const tinderUSer={
