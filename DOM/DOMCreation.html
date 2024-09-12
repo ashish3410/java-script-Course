@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Creation</title>
+    <style>
+        body{
+            background-color: black;
+            color:aliceblue;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+<script>
+    const div=document.createElement("div")
+    console.log(div)
+    div.id="myId"
+    div.className="myClass"
+
+    // div.innerHTML="Ashish Kumar Sahu"
+    
+    // another way of create a innerText
+    const innerText=document.createTextNode("Ashish Kumar Sahu")
+    div.appendChild(innerText)
+    div.style.backgroundColor="yellow"
+    div.style.color="red";
+    div.padding="12px";
+    // to set Custom Attribute
+    div.setAttribute("title","generated Title");
+
+    // this is how we show element to web page
+    document.body.appendChild(div)
+</script>
+</html>
