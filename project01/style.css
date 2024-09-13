@@ -1,0 +1,35 @@
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+}
+.button{
+    height:10vh;
+    width: 10vh;
+    margin: .8rem;
+    border: none;
+    border-radius:.5rem;
+    box-shadow: 3px 3px 3px 3px rgb(218, 216, 216);
+}
+h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:25vh;
+}
+#White{
+    background-color: white;
+}
+#Yellow{
+    background-color: yellow;
+}
+#Green{
+    background-color: green;
+}
+#Black{
+    background-color: black;
+}
+.youTubeLink:hover{
+    border: none;
+}
