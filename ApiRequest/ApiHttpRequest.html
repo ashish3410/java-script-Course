@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Http Request</title>
+</head>
+<body style="background-color: gray;">
+    <div class="hidden" style="height:400px; width: 300px;">
+        <img style="height: 180px; width:150px" class="photo" src="" alt="">
+        <h4 id="name"></h4>
+        <h4 id="userName"></h4>
+        <h4 id="follower"></h4>
+    </div>
+    <button class="button">Get Info</button>
+</body>
+<script>
+    const myPhoto=document.querySelector(".photo")
+    const name=document.querySelector("#name")
+    const userName=document.querySelector("#userName")
+    const follower=document.querySelector("#follower")
+    const button=document.querySelector(".button")
+    const MyUrl="https://api.github.com/users/ashish3410"
+    const xmlr=new XMLHttpRequest()
+    xmlr.open("GET",MyUrl)
+    xmlr.onreadystatechange=function(){
+        // console.log(xmlr.readyState)
+        if(xmlr.readyState===4){
+           const data=JSON.parse(this.responseText)
+           console.log(this.responseText)
+            button.addEventListener("click",function(){
+                myPhoto.src=`${data.avatar_url}`
+                name.innerHTML=`Name: ${(data.name).toUpperCase()}`
+                userName.innerHTML=`userName: ${data.login}`
+                follower.innerHTML=`follower: ${data.followers}`
+            })
+        }
+    }
+    xmlr.send()
+</script>
+</html>
