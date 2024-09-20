@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexical Scoping</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="red">Red</button>
+</body>
+<script>
+
+    // amm jindgi
+    // document.getElementById("orange").onclick=function(){
+    //     document.body.style.backgroundColor="orange"
+    // }
+    // document.getElementById("red").onclick=function(){
+    //     document.body.style.backgroundColor="red"
+    // }
+
+
+    // argument color accessable to changeColorfuncy=tion due to lexical scoping
+    function handler(color){
+        return function changeColor(){
+            document.body.style.backgroundColor=`${color}`
+    }
+}
+document.getElementById("orange").onclick=handler("orange")
+document.getElementById("red").onclick=handler("red")
+
+</script>
+</html>
